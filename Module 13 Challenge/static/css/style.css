@@ -1,0 +1,21 @@
+body {
+    background-color: #AFCDE9;
+}
+
+.jumbotron {
+  background-image: url("../images/blueskies.jpg");
+  background-size: 100% 100%;
+  text-align: center;
+  font-family: "Lucida Console";
+}
+
+.article-title, .article-p {
+  padding: 20px;
+}
+form {
+  padding: 5px;
+}
+
+#filter-btn {
+  width: 100%;
+}
