@@ -79,6 +79,7 @@ function buildCharts(sample) {
     // Deliverable 3: 1. Create a variable that filters the metadata array for the object with the desired sample number.
 
     var meta = data.metadata;
+    console.log(meta)
     var sampleNum = meta.filter(metaObj => metaObj.id == sample);
   
 
@@ -89,7 +90,8 @@ function buildCharts(sample) {
 
     // Deliverable 3: 2. Create a variable that holds the first sample in the metadata array.
 
-    var sampleArray = firstSample;
+    var sampleArray = sampleNum[0];
+    console.log(sampleArray)
 
     // Deliverable 1: 6. Create variables that hold the otu_ids, otu_labels, and sample_values.
     
@@ -102,7 +104,11 @@ function buildCharts(sample) {
 
     // Deliverable 3: 3. Create a variable that holds the washing frequency.
     
-    var wFreq = sampleArray.wfreq;
+    var wFreq = parseFloat(sampleArray.wfreq);
+    // var wFreq = parseFloat(meta.wfreq);
+    console.log(wFreq)
+    
+
 
     
     // Deliverable 1: 7. Create the yticks for the bar chart.
@@ -161,7 +167,7 @@ function buildCharts(sample) {
 // Deliverable 3: 4. Create the trace for the gauge chart.
 var gaugeTrace = [
   {
-    //domain: { x: [0, 1], y: [0, 1] },
+    domain: { x: [0, 1], y: [0, 1] },
     value: wFreq,
     title: { text: "<b>Belly Button Washing Frequency</b> <br> Scrubs per Week"},
     type: "indicator",
